@@ -40,10 +40,10 @@ Key UI highlights:
 - ☁️ **Cloud Firestore integration** for persistent storage  
 - 📱 Responsive layout compatible with Android and iOS (Expo)
 
+---
 
 
-
-    📱 How It Works (Usage Flow)
+ ##  📱 How It Works (Usage Flow)
 
 Add an item
 
@@ -82,10 +82,10 @@ Tap the sun/moon icon in the header.
 The whole app switches between light and dark themes.
 
 
+---
 
 
-
-🧠 Main Logic Overview
+## 🧠 Main Logic Overview
 
 App.js
 
