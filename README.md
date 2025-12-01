@@ -40,28 +40,7 @@ Key UI highlights:
 - ☁️ **Cloud Firestore integration** for persistent storage  
 - 📱 Responsive layout compatible with Android and iOS (Expo)
 
----
 
-## 🧱 Tech Stack
-
-- **React Native** (via Expo)
-- **Firebase Cloud Firestore**
-- **Expo Vector Icons**
-  - `@expo/vector-icons/MaterialIcons`
-  - `@expo/vector-icons/Ionicons`
-  - `@expo/vector-icons/AntDesign`
-
----
-
-## 📂 Project Structure
-
-```bash
-.
-├── App.js                 # Main app component (UI + logic)
-├── components/
-│   └── ShoppingItems.js   # Reusable list item component
-└── firebase/
-    └── index.js           # Firebase initialization & Firestore export
 
 
     📱 How It Works (Usage Flow)
@@ -101,6 +80,8 @@ Toggle Dark Mode
 Tap the sun/moon icon in the header.
 
 The whole app switches between light and dark themes.
+
+
 
 
 
