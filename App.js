@@ -142,13 +142,19 @@ export default function App() {
   };
 
   const saveEdit = async () => {
-    await updateDoc(doc(db, "shopping", editId), {
-      title: editTitle,
-      quantity: Number(editQuantity),
-    });
+    if (!editId || !user) return;
+  
+    await updateDoc(
+      doc(db, "shopping", user.uid, "items", editId),
+      {
+        title: editTitle.trim(),
+        quantity: Number(editQuantity),
+      }
+    );
+  
     setEditModal(false);
     getShoppingList();
-  };
+  };  
 
   useEffect(() => {
     if (user) getShoppingList();
