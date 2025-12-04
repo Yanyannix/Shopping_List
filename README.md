@@ -1,120 +1,132 @@
-ShoppingList
+## MyCart – React Native Shopping List App (with Firebase Authentication + Firestore)
 
-# 🛒 Shopping List App (React Native + Firebase)
-
-A simple yet polished **shopping list mobile app** built with **React Native (Expo)** and **Firebase Firestore**.  
-It lets you quickly add items with quantities, mark them as done, edit or delete them, and even toggle between **Light** and **Dark Mode** — all synced in real time via Firestore.
-
----
-
-## 📌 Project Description
-
-The **Shopping List App** helps users organize and track items they need to buy.  
-Each item includes:
-
-- A **title** (item name)
-- A **quantity**
-- A **check status** (done/not done)
-
-All data is stored in **Cloud Firestore**, so items persist even when the app is closed.  
-The layout is clean and minimal, with a floating input bar and a modal for editing items.  
-
-Key UI highlights:
-
-- **Dark Mode toggle** (sun/moon icon)
-- **Item counter** in the header
-- **Delete All** button to clear the list
-- Smooth item cards with icons for **check**, **edit**, and **delete**
+MyCart is a minimalist shopping list mobile application built using React Native (Expo) and Firebase.
+It includes user authentication, per-account item storage, dark mode, edit/delete features, and a clean UI.
 
 ---
 
 ## ✨ Features
+## 🔐 Firebase Authentication
 
-- ✅ **Add items** with title and quantity  
-- ✏️ **Edit items** using a modal popup  
-- ✔️ **Mark items as completed** (check/uncheck)  
-- 🗑️ **Delete individual items**  
-- 💣 **Delete all items at once**  
-- 🌙 **Dark Mode / Light Mode** toggle  
-- 🔢 **Real-time item count** displayed on the header  
-- ☁️ **Cloud Firestore integration** for persistent storage  
-- 📱 Responsive layout compatible with Android and iOS (Expo)
+Login & Signup with email + password
+
+Auto-detect logged-in user
+
+Secure logout
 
 ---
 
+## 🗂 Firestore Database
 
- ##  📱 How It Works (Usage Flow)
+Each user has their own unique shopping list
 
-Add an item
+Add items with quantity
 
-Type an item name in the Item... field.
+Toggle items as checked/unchecked
 
-Optionally set the Qty (defaults to 1 if empty).
+Edit items
 
-Press the + button or submit via keyboard.
+Delete individual items with confirmation
 
-Mark as done
-
-Tap the check icon on the left of an item.
-
-Checked items show with a line-through style.
-
-Edit an item
-
-Press the edit (pencil) icon.
-
-A modal appears where you can update the title and quantity.
-
-Press Save to confirm.
-
-Delete an item
-
-Tap the trash icon on the right of an item.
-
-Delete all items
-
-Tap the trash icon in the header to clear the entire list.
-
-Toggle Dark Mode
-
-Tap the sun/moon icon in the header.
-
-The whole app switches between light and dark themes.
-
+Delete all items with confirmation
 
 ---
 
+## 🎨 UI & Functionality
 
-## 🧠 Main Logic Overview
+Modern minimalist design
+
+Smooth animations and modals
+
+Dark Mode toggle
+
+Real-time updates
+
+Item counter
+
+Responsive layout
+
+---
+
+## 📸 App Overview
+
+Login / Signup screens with custom logo
+
+Home screen showing the user’s personal shopping list
+
+Input bar for adding items
+
+Edit modal to update items
+
+Header with:
+
+Logout button
+
+Dark mode toggle
+
+Item count
+
+Delete All button
+
+---
+
+## 🛠 Technologies Used
+| Tech                        | Purpose                            |
+| --------------------------- | ---------------------------------- |
+| **React Native (Expo)**     | Frontend mobile UI                 |
+| **Firebase Authentication** | User login/signup                  |
+| **Firestore Database**      | Store user-specific shopping items |
+| **Vector Icons (Expo)**     | Icons                              |
+| **React Hooks**             | State management                   |
+
+---
+
+## 📂 Project Structure
+MyCart/
+│── App.js
+│── firebase/
+│   └── index.js
+│── components/
+│   ├── Login.js
+│   ├── Signup.js
+│   └── ShoppingItems.js
+│── assets/
+│   └── MyCart.png
+└── README.md
+
+---
+
+## 🔥 How Firestore Stores User Data
+Data is stored separately per user using this structure:
+shopping/
+   └── USER_UID/
+        └── items/
+             ├── item1
+             ├── item2
+             └── item3
+This ensures each account sees only their own items.
+
+---
+
+## 🚀 Key Files
 
 App.js
 
-Manages global state:
+Handles login state
+Loads user-specific Firestore items
+Add / Edit / Delete logic
+Dark mode UI
+Delete All confirmation dialog
 
-shoppingList, title, quantity
-
-darkMode, editModal, editTitle, editQuantity, editId
-
-Fetches items from Firestore with getShoppingList()
-
-Adds, updates, deletes, and toggles items using Firestore SDK (addDoc, updateDoc, deleteDoc, getDocs)
 
 ShoppingItems.js
 
-Displays each item card
+Item rendering
+Toggle check
+Edit button
+Delete button
 
-Renders icons for:
+Login.js & Signup.js
 
-Check/Uncheck
-
-Edit
-
-Delete
-
-Applies styles based on darkMode and isChecked
-
-firebase/index.js
-
-Initializes Firebase using initializeApp
-
-Exports db and Firestore helper functions
+Authentication UI
+Uses Firebase Auth to create/login users
