@@ -114,13 +114,13 @@ export default function App() {
         {/* HEADER */}
         <View style={styles.headerBox}>
           <Text style={[styles.headerTitle, darkMode && { color: "white" }]}>
-            Shopping List
+            My Cart
           </Text>
 
           <View style={styles.headerRight}>
             <Pressable
               onPress={() => setDarkMode(!darkMode)}
-              style={{ marginRight: 45 }}
+              style={{ marginRight: 25 }}
             >
               {darkMode ? (
                 <Ionicons name="sunny" size={30} color="white" />
