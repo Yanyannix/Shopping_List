@@ -83,6 +83,7 @@ Delete All button
 
 ## 📂 Project Structure
 MyCart/
+MyCart/
 │── App.js
 │── firebase/
 │   └── index.js
