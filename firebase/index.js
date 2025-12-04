@@ -9,12 +9,12 @@ import {
 } from "firebase/firestore";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyDFH5r95PLdIS_HEXwQxdGtyYd8AnlOTTU",
-  authDomain: "shopping-79813.firebaseapp.com",
-  projectId: "shopping-79813",
-  storageBucket: "shopping-79813.firebasestorage.app",
-  messagingSenderId: "470891242198",
-  appId: "1:470891242198:web:834a858c57f8ccb3829f77"
+  apiKey: process.env.EXPO_PUBLIC_FIREBASE_API_KEY,
+  authDomain: process.env.EXPO_PUBLIC_FIREBASE_AUTH_DOMAIN,
+  projectId: process.env.EXPO_PUBLIC_FIREBASE_PROJECT_ID,
+  storageBucket: process.env.EXPO_PUBLIC_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: process.env.EXPO_PUBLIC_FIREBASE_MESSAGING_SENDER_ID,
+  appId: process.env.EXPO_PUBLIC_FIREBASE_APP_ID,
 };
 
 const app = initializeApp(firebaseConfig);
