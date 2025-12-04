@@ -58,7 +58,7 @@ Input bar for adding items
 
 Edit modal to update items
 
-Header with:
+**Header with:**
 
 Logout button
 
